@@ -28,4 +28,3 @@ git clone https://github.com/beaintech/codex-obsidian-memory.git
 ## 安全
 
 不要在仓库中保存密码、API 密钥、访问令牌、私钥或恢复码。即使 GitHub 仓库设为私有，也应使用系统钥匙串或专用密码管理器保存认证秘密。
-
