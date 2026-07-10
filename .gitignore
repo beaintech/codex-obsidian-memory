@@ -1,0 +1,8 @@
+# This repository intentionally publishes only the Codex memory Markdown.
+*
+!.gitignore
+!README.md
+!AGENTS.md
+!Codex Memory/
+!Codex Memory/**
+
