@@ -32,7 +32,7 @@ updated: 2026-07-14
 ## 当前状态
 
 - RAG v0 核心、CLI、测试、MCP Server 和文档已实现。
-- RAG v0 已推送到 GitHub 分支 `agent/rag-v0`，并创建 Draft PR #1。
+- RAG v0 已通过 PR #1 合并到 GitHub `main`。
 - 本地 `obsidian_memory` STDIO MCP 已注册到 Codex，全局状态为 enabled。
 - 当前索引包含 16 个 Markdown 文件和 44 个章节块。
 - 下一阶段：重启 Codex，在新任务中确认 `search_memory` 和 `read_note` 两个工具已加载，并用虚构数据完成端到端测试。
