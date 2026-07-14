@@ -2,6 +2,25 @@
 
 一个由 Markdown 文件组成、可在 Obsidian 中直接查看和维护的 Codex 跨项目记忆库。
 
+现在包含一个本地优先的 RAG v0：把 Obsidian Markdown 建成 SQLite FTS5 索引，并通过 MCP 向 Codex 提供只读的 `search_memory` 与 `read_note` 工具。
+
+## RAG v0 quick start
+
+要求 Python 3.11+，核心索引不需要 API Key。
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[mcp]'
+obsidian-rag index --vault "$PWD"
+obsidian-rag search --vault "$PWD" "长期规则"
+```
+
+完整说明：
+
+- [RAG v0 architecture](docs/rag-v0.md)
+- [Connect to Codex with MCP](docs/codex-mcp.md)
+
 ## 在 Obsidian 中使用
 
 ### 当前电脑
@@ -28,3 +47,9 @@ git clone https://github.com/beaintech/codex-obsidian-memory.git
 ## 安全
 
 不要在仓库中保存密码、API 密钥、访问令牌、私钥或恢复码。即使 GitHub 仓库设为私有，也应使用系统钥匙串或专用密码管理器保存认证秘密。
+
+生成的 `.rag/index.sqlite3` 是可重建的本地缓存，已经被 Git 忽略，不会上传到 GitHub。
+
+## License
+
+MIT
