@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-obsidian-rag"
+version = "0.1.0"
+description = "Local-first retrieval and MCP tools for an Obsidian Markdown vault"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "beaintech" }]
+keywords = ["codex", "obsidian", "rag", "mcp", "markdown"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Text Processing :: Indexing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+mcp = [
+  "mcp>=1.27,<2",
+  # MCP authentication depends on cryptography. This keeps an Intel macOS wheel
+  # available instead of forcing a slow local Rust build with cryptography 49.
+  "cryptography>=45,<49",
+]
+dev = []
+
+[project.scripts]
+obsidian-rag = "obsidian_rag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

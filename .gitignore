@@ -1,8 +1,26 @@
-# This repository intentionally publishes only the Codex memory Markdown.
+# Publish the memory templates and the open-source RAG implementation only.
 *
 !.gitignore
 !README.md
 !AGENTS.md
+!LICENSE
+!pyproject.toml
 !Codex Memory/
 !Codex Memory/**
+!docs/
+!docs/**
+!src/
+!src/**
+!tests/
+!tests/**
 
+# Local/private generated state must never be committed.
+.rag/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
